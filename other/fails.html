@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suntory | The Premium Malt's</title>
+  <link rel="shortcut icon" href="http://www.thepremiummalts-usa.com/img/favicon.ico">
+  <link rel="apple-touch-icon" href="http://www.thepremiummalts-usa.com/img/favicon.ico" />
+
+  <!--script type="text/javascript" src="index.js"></script-->
+  <link href="index.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScrihpt -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <form action="#" method="get" name="birth">
+    <input type="int" placeholder="MM"   id="MM" name="MM">
+    <input type="int" placeholder="DD"   id="DD" name="DD">
+    <input type="int" placeholder="YEAR" id="YEAR" name="YEAR">
+    <!-- ↓onClickイベントを追加 -->
+    <input type="submit" value="送信" onclick="return check()">
+  </form>
+
+
+
+
+  <!-- ↓JavaScriptの処理を追加 -->
+  <script type="text/javascript">
+  // あなたの誕生日
+
+
+
+  // Dateインスタンスに変換
+  const birthDate = new Date($guest_year, $guest_month - 1, $guest_date);
+
+  // 文字列に分解
+  const y2 = birthDate.getFullYear().toString().padStart(4, '0');
+  const m2 = (birthDate.getMonth() + 1).toString().padStart(2, '0');
+  const d2 = birthDate.getDate().toString().padStart(2, '0');
+
+  // 今日の日付
+  const today = new Date();
+  const y1 = today.getFullYear().toString().padStart(4, '0');
+  const m1 = (today.getMonth() + 1).toString().padStart(2, '0');
+  const d1 = today.getDate().toString().padStart(2, '0');
+
+  // 引き算
+  const age = Math.floor((Number(y1 + m1 + d1) - Number(y2 + m2 + d2)) / 10000);
+  console.log($guest_year);
+
+  function check(){
+
+    if (age < 21){
+      //条件に一致する場合(メールアドレスが空の場合)
+      alert("メールアドレスを入力してください");    //エラーメッセージを出力
+      return false;    //送信ボタン本来の動作をキャンセルします
+    }else{
+      //条件に一致しない場合(メールアドレスが入力されている場合)
+      return true;    //送信ボタン本来の動作を実行します
+    }
+  }
+
+
+
+  // function getAge(year, month, day){
+  //
+  //   //誕生年月日
+  //   var birthday  = new Date(y, m-1, d);
+  //
+  //   //今日
+  //   var today = new Date();
+  //
+  //   //今年の誕生日
+  //   var thisYearBirthday =
+  //   new Date(today.getFullYear(), birthday.getMonth(), birthday.getDate());
+  //
+  //   //今年-誕生年
+  //   var age = today.getFullYear() - birthday.getFullYear();
+  //
+  //   //今年の誕生日を迎えていなければage-1を返す
+  //   return (today < thisYearBirthday)?age-1:age;
+  // }
+  // function check(){
+  //
+  //   if (mail_form.mail.value == ""){
+  //     //条件に一致する場合(メールアドレスが空の場合)
+  //     alert("メールアドレスを入力してください");    //エラーメッセージを出力
+  //     return false;    //送信ボタン本来の動作をキャンセルします
+  //   }else{
+  //     //条件に一致しない場合(メールアドレスが入力されている場合)
+  //     return true;    //送信ボタン本来の動作を実行します
+  //   }
+  // }
+  </script>
+
+</body>
+</html>

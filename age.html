@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suntory | The Premium Malt's</title>
+  <link rel="shortcut icon" href="http://www.thepremiummalts-usa.com/img/favicon.ico">
+  <link rel="apple-touch-icon" href="http://www.thepremiummalts-usa.com/img/favicon.ico" />
+
+  <!--script type="text/javascript" src="index.js"></script-->
+  <link href="index.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScrihpt -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <form name = "form">
+    <input type="int" name="year" id="year" placeholder="YEAR" maxlength='4'>
+    <input type="int" name="month" id="month" placeholder="MM" maxlength='2'>
+    <input type="int" name="date" id="date" placeholder="DD" maxlength='2'>
+    <input type="button" value="決定！" onclick="return age();">
+  </form>
+
+
+
+
+  <script type="text/javascript">
+  function age(){
+    let month = document.getElementById('month').value;
+
+    let date = document.getElementById('date').value;
+
+    let year = document.getElementById('year').value;
+
+    let regexp_year = new RegExp(/[0-9]/);
+    let regexp_month = new RegExp(/0[0-9]|1[0-2]/);
+    let regexp_date = new RegExp(/0[0-9]|1[0-9]|2[0-9]|3[0-1]$/);
+
+    const birthDate = new Date(year, month - 1, date);
+    // 文字列に分解
+    const y2 = birthDate.getFullYear().toString().padStart(4, '0');
+    const m2 = (birthDate.getMonth() + 1).toString().padStart(2, '0');
+    const d2 = birthDate.getDate().toString().padStart(2, '0');
+    // 今日の日付
+    const today = new Date();
+    const y1 = today.getFullYear().toString().padStart(4, '0');
+    const m1 = (today.getMonth() + 1).toString().padStart(2, '0');
+    const d1 = today.getDate().toString().padStart(2, '0');
+    // 引き算
+    const age = Math.floor((Number(y1 + m1 + d1) - Number(y2 + m2 + d2)) / 10000);
+    console.log(age);
+
+    if (month.match(regexp_month) && date.match(regexp_date) && year.match(regexp_year)){
+      if (age < 22){
+        alert("Sorry you must be 21 or older to view this site.");
+        return false;
+      }else{
+        window.location.href = 'top.html';
+      }
+    }else{
+      alert("Please enter a valid date.");
+    }
+  };
+  </script>
+
+</body>
+</html>

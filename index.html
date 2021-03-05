@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suntory | The Premium Malt's</title>
+  <link rel="shortcut icon" href="http://www.thepremiummalts-usa.com/img/favicon.ico">
+  <link rel="apple-touch-icon" href="http://www.thepremiummalts-usa.com/img/favicon.ico" />
+
+  <!--script type="text/javascript" src="index.js"></script-->
+  <link href="age.css" rel="stylesheet">
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Open+Sans:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+  <div class="">
+    <img src="img/nav-logo.png" class="d-block mx-auto" style="width:25%; height:25%;" alt="">
+  </div>
+
+  <hr style="background-color:rgb(38, 208, 187)white;">
+
+  <h1 class="text-center  mt-5">PLEASE ENTER</h1>
+  <h2 class="text-center  mt-3">YOUR DATE OF BIRTH</h2>
+
+  <div class="mt-5">
+    <div class="container">
+      <form name="form" class="" action="" style="text-align:center !important;">
+        <div class="mb-3" style="" >
+          <input type="int" style="width:10%; height:50px !important; text-align:center; background-color:rgb(213, 190, 111); border: 2px solid #e97f01;" name="date" id="date" placeholder="DD" maxlength='2'>
+          <input type="int" class="mx-2" style="width:10%; height:50px !important; text-align:center; background-color:rgb(213, 190, 111); border: 2px solid #e97f01;" name="month" id="month" placeholder="MM" maxlength='2'>
+          <input type="int" style="width:15%; height:50px !important; text-align:center; background-color:rgb(213, 190, 111); border: 2px solid #e97f01;" name="year" id="year" placeholder="YEAR" maxlength='4'>
+        </div>
+        <div class="row mt-2">
+          <input type="button" style="width:auto; margin:10px auto; background-color:rgb(213, 190, 111); border: 2px solid #e97f01;" value="Submit" onclick="return age();">
+        </div>
+        </div>
+      </form>
+    </div>
+    <hr class="mt-5" style="background-color:orange; width:100%; height:3px;">
+
+    <h3 class="text-center">You must be of legal drinking age to enter this site</h3>
+    <p>
+      <em>
+        By clicking ENTER, you represent that you are at least 21 years of age and are accessing this website from a jurisdiction where the consumption of alcohol is legal. Sapporo USA asks those who may consume alcoholic beverages legally to do so responsibly.
+      </em>
+    </p>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  function age(){
+    let month = document.getElementById('month').value;
+
+    let date = document.getElementById('date').value;
+
+    let year = document.getElementById('year').value;
+
+    let regexp_year = new RegExp(/[0-9]/);
+    let regexp_month = new RegExp(/0[0-9]|1[0-2]/);
+    let regexp_date = new RegExp(/0[0-9]|1[0-9]|2[0-9]|3[0-1]$/);
+
+    const birthDate = new Date(year, month - 1, date);
+    // 文字列に分解
+    const y2 = birthDate.getFullYear().toString().padStart(4, '0');
+    const m2 = (birthDate.getMonth() + 1).toString().padStart(2, '0');
+    const d2 = birthDate.getDate().toString().padStart(2, '0');
+    // 今日の日付
+    const today = new Date();
+    const y1 = today.getFullYear().toString().padStart(4, '0');
+    const m1 = (today.getMonth() + 1).toString().padStart(2, '0');
+    const d1 = today.getDate().toString().padStart(2, '0');
+    // 引き算
+    const age = Math.floor((Number(y1 + m1 + d1) - Number(y2 + m2 + d2)) / 10000);
+    console.log(age);
+
+    if (month.match(regexp_month) && date.match(regexp_date) && year.match(regexp_year)){
+      if (age < 22){
+        alert("Sorry you must be 21 or older to view this site.");
+        return false;
+      }else{
+        window.location.href = 'top.html';
+      }
+    }else{
+      alert("Please enter a valid date.");
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
