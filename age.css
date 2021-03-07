@@ -1,5 +1,59 @@
-/* body {
+body {
   background: #000007 url("img/Suntory_Background.jpg") no-repeat fixed center;
   //background: #000007 no-repeat fixed center;
   font-family: 'Noto Serif', 'Open Sans', serif !important;
-} */
+}
+
+.logo_img {
+width:30%;
+height:25%;
+border-bottom:solid;
+border-color:rgb(168, 179, 177);
+border-width:1px;
+padding-bottom: 6%;
+}
+
+.mm {
+  width:14%;
+  height:50px !important;
+  text-align:center;
+  background-color:rgb(213, 190, 111);
+  border: 2px
+  solid #e97f01;
+}
+
+.dd {
+  width:14%;
+  height:50px !important;
+  text-align:center;
+  background-color:rgb(213, 190, 111);
+  border: 2px
+  solid #e97f01;
+}
+
+.year {
+  width:14%;
+  height:50px !important;
+  text-align:center;
+  background-color:rgb(213, 190, 111);
+  border: 2px
+  solid #e97f01;
+}
+
+.enter {
+  color:white;
+  font-family:'HiraMinPro-W6';
+  width:18% !important;
+  height:50px !important;
+  margin:10px auto;
+  background-color:black;
+  border: 2px
+  solid #e97f01;
+}
+
+.line {
+  border-top:solid;
+  border-color:rgb(168, 179, 177);
+  border-width:1px;
+  padding-top: 6%;
+}

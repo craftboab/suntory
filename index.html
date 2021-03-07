@@ -20,36 +20,40 @@
 
 <div class="container mt-5">
   <div class="">
-    <img src="img/nav-logo.png" class="d-block mx-auto" style="width:25%; height:25%;" alt="">
+    <img src="img/logo_new02.png" class="d-block mx-auto logo_img" alt="">
+    <!-- <hr align="center" style="background-color:white; width:50%; height:5px;"> -->
   </div>
 
-  <hr style="background-color:rgb(38, 208, 187)white;">
 
-  <h1 class="text-center  mt-5">PLEASE ENTER</h1>
-  <h2 class="text-center  mt-3">YOUR DATE OF BIRTH</h2>
 
-  <div class="mt-5">
+
+  <h1 class="text-center text-white" style="margin-top:6%; font-family:'Verdana';">PLEASE ENTER</h1>
+  <h3 class="text-center mt-2" style="color:rgb(219, 140, 67); font-family:'Verdana';">YOUR DATE OF BIRTH</h2>
+
+  <div class="mt-4">
     <div class="container">
       <form name="form" class="" action="" style="text-align:center !important;">
         <div class="mb-3" style="" >
-          <input type="int" style="width:10%; height:50px !important; text-align:center; background-color:rgb(213, 190, 111); border: 2px solid #e97f01;" name="date" id="date" placeholder="DD" maxlength='2'>
-          <input type="int" class="mx-2" style="width:10%; height:50px !important; text-align:center; background-color:rgb(213, 190, 111); border: 2px solid #e97f01;" name="month" id="month" placeholder="MM" maxlength='2'>
-          <input type="int" style="width:15%; height:50px !important; text-align:center; background-color:rgb(213, 190, 111); border: 2px solid #e97f01;" name="year" id="year" placeholder="YEAR" maxlength='4'>
+          <input type="int" class="mm"  name="month" id="month" placeholder="MM" maxlength='2'>
+          <input type="int" class="mx-2 dd" name="date" id="date" placeholder="DD" maxlength='2'>
+          <input type="int" class="year" name="year" id="year" placeholder="YEAR" maxlength='4'>
         </div>
-        <div class="row mt-2">
-          <input type="button" style="width:auto; margin:10px auto; background-color:rgb(213, 190, 111); border: 2px solid #e97f01;" value="Submit" onclick="return age();">
+        <div class="row mt-3">
+          <input type="button" class="enter" value="ENTER" onclick="return age();">
         </div>
         </div>
       </form>
     </div>
-    <hr class="mt-5" style="background-color:orange; width:100%; height:3px;">
+    <!-- <hr class="mt-5" style="background-color:orange; width:100%; height:3px;"> -->
 
-    <h3 class="text-center">You must be of legal drinking age to enter this site</h3>
-    <p>
-      <em>
-        By clicking ENTER, you represent that you are at least 21 years of age and are accessing this website from a jurisdiction where the consumption of alcohol is legal. Sapporo USA asks those who may consume alcoholic beverages legally to do so responsibly.
-      </em>
-    </p>
+    <div class="container mt-3 line">
+      <h4 class="text-center text-white" sytle="font-family:'Franklin Gothic Medium' ">You must be of legal drinking age to enter this site</h3>
+      <p class="text-white p-3">
+        <!-- <em> -->
+          By clicking ENTER, you represent that you are at least 21 years of age and are accessing this website from a jurisdiction where the consumption of alcohol is legal. Suntory USA asks those who may consume alcoholic beverages legally to do so responsibly.
+        <!-- </em> -->
+      </p>
+    </div>
 
   </div>
 
