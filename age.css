@@ -14,7 +14,7 @@ padding-bottom: 6%;
 }
 
 .mm {
-  width:14%;
+  width:50px;
   height:50px !important;
   text-align:center;
   background-color:rgb(213, 190, 111);
@@ -23,7 +23,7 @@ padding-bottom: 6%;
 }
 
 .dd {
-  width:14%;
+  width:50px;
   height:50px !important;
   text-align:center;
   background-color:rgb(213, 190, 111);
@@ -32,7 +32,7 @@ padding-bottom: 6%;
 }
 
 .year {
-  width:14%;
+  width:70px;
   height:50px !important;
   text-align:center;
   background-color:rgb(213, 190, 111);
@@ -56,4 +56,17 @@ padding-bottom: 6%;
   border-color:rgb(168, 179, 177);
   border-width:1px;
   padding-top: 6%;
+}
+
+@media screen and (max-width:499px){
+  .enter {
+    color:white;
+    /* font-family:'HiraMinPro-W6'; */
+    width:90px !important;
+    height:50px !important;
+    margin:10px auto;
+    background-color:black;
+    border: 2px
+    solid #e97f01;
+  }
 }
