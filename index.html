@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=8">
   <title>Suntory | The Premium Malt's</title>
   <link rel="shortcut icon" href="http://www.thepremiummalts-usa.com/img/favicon.ico">
   <link rel="apple-touch-icon" href="http://www.thepremiummalts-usa.com/img/favicon.ico" />
@@ -94,14 +95,13 @@
     const d1 = today.getDate().toString().padStart(2, '0');
     // 引き算
     const age = Math.floor((Number(y1 + m1 + d1) - Number(y2 + m2 + d2)) / 10000);
-    console.log(age);
 
     if (month.match(regexp_month) && date.match(regexp_date) && year.match(regexp_year)){
       if (age < 22){
         alert("Sorry you must be 21 or older to view this site.");
         return false;
       }else{
-        window.location.href = 'top.html';
+        window.location.href = 'lp.html';
       }
     }else{
       alert("Please enter a valid date.");
